@@ -1,0 +1,43 @@
+git init
+touch initial.txt
+git add initial.txt
+git commit -m my_first_commit
+git checkout -b my_bug_branch
+touch bug_branch_1.txt
+git add bug_branch_1.txt
+git commit -m My_first_bug_branch_change
+git checkout master
+touch secondary.txt
+git add secondary.txt
+git commit -m my_second_master_branch_commit
+gitk
+git checkout my_bug_branch 
+gitk
+git rebase master
+gitk
+touch bug_branch_2.txt
+git add bug_branch_2.txt
+git commit -m my_second_bug_branch_commit
+gitk
+git checkout master
+gitk
+touch tertiary.txt
+git add tertiary.txt
+git commit -m my_third_master_branch_commit
+touch quarternary.txt
+gitk
+git add quaternary.txt
+git commit -m my_fourth_master_branch_commit
+gitk
+git checkout my_bug_branch 
+gitk
+git rebase master
+gitk
+git checkout master
+git checkout master
+git merge --squash my_new_feature
+git merge --squash my_bug_branch 
+gitk
+git status
+git add .
+git commit -m 'Squashing_my_commits!'
